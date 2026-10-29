@@ -103,7 +103,7 @@ export default function CeoPage() {
           <div className="lg:col-span-2">
             <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-line shadow-md bg-archblue/5">
               <Image
-                src="/Mr_Armiyaw_Abubakar.jpg"
+                src="/Mr_Armiyaw_Abubakar.jpeg"
                 alt="Mr. Armiyaw Abubakar, Chief Executive Officer of Ibtikan Ibn Adams Properties Limited"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
