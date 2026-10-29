@@ -21,8 +21,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  cacheComponents: true,
   experimental: {
-    cacheComponents: true,
     partialPrefetching: true,
   },
 };
