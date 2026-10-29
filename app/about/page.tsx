@@ -8,7 +8,6 @@ import { CtaBand } from "@/components/site/CtaBand";
 import { getPageContent } from "@/lib/content";
 import { company, media } from "@/lib/brand";
 
-export const experimental_ppr = true;
 
 
 export const generateMetadata = () =>

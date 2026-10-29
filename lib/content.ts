@@ -37,6 +37,7 @@ export const CONTENT_KEYS: Record<string, ContentKeyDef> = {
 };
 
 export async function getPageContent(key: string): Promise<string> {
+  "use cache";
   const def = CONTENT_KEYS[key];
   if (!def) return "";
   try {
