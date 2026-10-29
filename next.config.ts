@@ -21,7 +21,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  cacheComponents: true,
+  cacheComponents: {
+    sizeLimit: 10000,
+    paths: [
+      {
+        regex: /^\/about$/,
+        dynamic: 'force-dynamic',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
