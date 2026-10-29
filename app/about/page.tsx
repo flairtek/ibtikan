@@ -1,6 +1,5 @@
 
 import Link from "next/link";
-
 import Image from "next/image";
 import { buildMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/site/PageHero";
@@ -8,6 +7,8 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { CtaBand } from "@/components/site/CtaBand";
 import { getPageContent } from "@/lib/content";
 import { company, media } from "@/lib/brand";
+
+export const experimental_ppr = true;
 
 
 export const generateMetadata = () =>
