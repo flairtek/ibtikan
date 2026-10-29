@@ -76,7 +76,6 @@ export interface PropertyQuery {
 export async function listProperties(
   q: PropertyQuery = {}
 ): Promise<PropertyRecord[]> {
-  "use cache";
   const rows = await queryAll("properties", (query) => {
     let qBuilder = query;
     if (!q.includeUnpublished) qBuilder = qBuilder.eq("published", true);
@@ -316,7 +315,6 @@ function mapProject(row: Record<string, unknown>): ProjectRecord {
 export async function listProjects(
   opts: { all?: boolean; limit?: number } = {}
 ): Promise<ProjectRecord[]> {
-  "use cache";
   const rows = await queryAll("projects", (query) => {
     let qBuilder = query;
     if (!opts.all) qBuilder = qBuilder.eq("published", true);
@@ -571,7 +569,6 @@ function mapArticle(row: Record<string, unknown>): ArticleRecord {
 }
 
 export async function listArticles(publishedOnly = true): Promise<ArticleRecord[]> {
-  "use cache";
   const rows = await queryAll("articles", (query) => {
     let qBuilder = query.order("published_at", { ascending: false }).order("id", { ascending: false });
     if (publishedOnly) qBuilder = qBuilder.eq("status", "published");
@@ -653,7 +650,6 @@ function mapTeamMember(row: Record<string, unknown>): TeamMemberRecord {
 export async function listTeamMembers(
   publishedOnly = false
 ): Promise<TeamMemberRecord[]> {
-  "use cache";
   const rows = await queryAll("team_members", (query) => {
     let qBuilder = query.order("sort", { ascending: true }).order("id", { ascending: true });
     if (publishedOnly) qBuilder = qBuilder.eq("published", true);
