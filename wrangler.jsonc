@@ -1,0 +1,27 @@
+// Local development bindings. Deployments receive isolated DB/FILES bindings
+// provisioned by the hosting platform; these are not production credentials.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ibtikan-dev",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ibtikan-dev-local",
+      "database_id": "local-ibtikan-dev"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "FILES",
+      "bucket_name": "ibtikan-dev-local-files"
+    }
+  ],
+  "vars": {
+    // Public, non-secret defaults for local development. Never put real
+    // secrets here; use .env.local (gitignored) instead.
+    "ADMIN_EMAILS": "",
+    "RATE_LIMIT_SALT": "ibtikan-local-dev"
+  }
+}

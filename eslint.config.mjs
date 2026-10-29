@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated Freebuff/OpenNext build artifacts:
+    ".open-next/**",
+    "freebuff.open-next.config.ts",
   ]),
 ]);
 
